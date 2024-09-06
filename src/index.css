@@ -1,68 +1,260 @@
+/*basic styles*/
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Rubik', sans-serif;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+#root {
+  display: flex;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+* {
+  box-sizing: border-box;
+}
+
+
+/*styles for form fields*/
+
+.cv-form {
+  min-width: 420px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height:fit-content;
+  overflow-y: auto;
+}
+
+.form-heading {
+  margin-bottom: 15px;
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+  padding-top: 15px;
+
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field input[type="tel"],
+.form-field input[type="number"],
+.form-field input[type="date"],
+.form-field input[type="textarea"] {
+  font-size: 14px;
+}
+/**/
+.add-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.add-btn:hover {
+  background-color: #0056b3;
+}
+/**/
+
+/**/
+.saved-data {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-title {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.edit-btn, .delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+/**/
+
+    
+
+
+/*styles for cv diplay section*/
+
+.cv-display {
+  min-width: 960px;
+  max-width: 960px;
+  height: 1100px;
+  margin-left: 90px;
+  margin-right: 90px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+  display: flex;
+}
+
+/* Section Left */
+.section-left {
+  width: 350px;
+  background-color: #F0F0F0;
+}
+
+.about-section {
+  padding-left: 25px;
+}
+
+.avatar {
+  width: 100%;
+  height: 350px;
+  margin-top: 40px;
+  background-color: #233140;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+}
+
+.about-heading, .contact-heading {
+  padding-top: 30px;
+}
+
+.about-description {
+  padding-right: 20px;
+  line-height: 1.4;
+}
+
+.contact-heading {
+  padding-bottom: 15px;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  padding-top: 15px;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Section Right */
+
+.section-right {
+  padding-left: 50px;
+  width: calc(100% - 350px);
+}
+
+.sub-heading {
+  color: #1D3557;
+  padding-top: 30px;
+}
+
+.separator {
+  border-top: 3px solid black;
+}
+
+.name-job {
+  padding-top: 30px;
+}
+
+.full-name {
+  font-size: 32px;
+  color: #2C3E50;
+}
+
+.current-position {
+  font-size: large;
+  padding-top: 25px;
+  color: #235281;
+}
+
+.experience-section, .education-section {
+  padding-top: 40px;
+}
+
+.job-position, .company-name, .degree, .university-name {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.job-position {
+  font-size: 20px;
+}
+
+.degree {
+  font-size: 20px;
+}
+
+.company-name, .university-name {
+  color: #636363;
+}
+
+.job-description {
+  color: #433d3d;
+  padding-right: 25px;
 }
